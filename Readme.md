@@ -42,9 +42,7 @@ This repository contains Tests using TestNG and Selenium api, with Allure as rep
 
 **Reporting**
 --------------
-1. 
- 
- To run reports after a test run the following command from the project base directory- 
+1. To run reports after a test run the following command from the project base directory- 
  ```allure serve```
 
 
