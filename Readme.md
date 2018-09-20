@@ -2,7 +2,7 @@ Demo QA test
 ==============
 
 
-This repository contains Tests using TestNG and Selenium api, with Allure as reporting framework
+This repository contains Tests using TestNG and Webdriver API, with Allure as reporting framework
 -------------------------------------------------------------------------------------------------
 
 **Prerequisites (download and install):**
@@ -16,7 +16,7 @@ This repository contains Tests using TestNG and Selenium api, with Allure as rep
 5. Chromedriver
   1. Windows- https://sites.google.com/a/chromium.org/chromedriver/downloads
   The following line of code needs to be added to the base class :
-  ```System.setProperty(“webdriver.chrome.driver”, “pathofchromedriver\\chromedriver.exe”);```
+  ```System.setProperty("webdriver.chrome.driver", "pathofchromedriver\\chromedriver.exe");```
   2. Mac - `$ brew tap caskroom/cask && brew cask install chromedriver`
 6. intelliJ IDE Community Edition (http://www.jetbrains.com/idea/download/)
 7. Maven -
@@ -44,8 +44,19 @@ This repository contains Tests using TestNG and Selenium api, with Allure as rep
 --------------
 1. 
  
- To run reports after a test run the following command from the project base directory- 
+ To run reports after a test run, run the following command from the project base directory- 
  ```allure serve```
+ 
+ **Build a docker image and run**
+ ------------------------
+ 
+ docker build -t testimage .
+ 
+ docker run -d \
+   --name=<test_image> \
+   -v <host path>/allure-results:/usr/bin/app/allure-results \
+   testimage:latest
+
 
 
 

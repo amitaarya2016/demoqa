@@ -36,7 +36,7 @@ import java.util.concurrent.TimeUnit;
 @Listeners(TestNgListenerAdapter.class)
 public class BaseTest {
 
-    public static final int RETRY_FAILED_TEST = 1;
+    public static final int RETRY_FAILED_TEST = 0;
     public static final String SCREENSHOT_DEFAULT_FOLDER = "target/screenshot/";
     public static final int DEFAULT_WAIT = 20;
     public static HashMap<String, WebDriver> webDriverHashMap = new HashMap<>();
@@ -44,6 +44,7 @@ public class BaseTest {
     //set the time out for fluent waits
     static {
         System.setProperty("wait_timeout", Integer.toString(DEFAULT_WAIT));
+//        System.setProperty("webdriver.chrome.driver", "pathofchromedriver\\chromedriver.exe");
     }
 
     protected int DEFAULT_TIMEOUT = 20;
@@ -103,7 +104,7 @@ public class BaseTest {
             FileUtils.copyFile(scrFile, new File(newFileNamePath));
 
             Allure.addAttachment("Screenshot", "image/png", Files.newInputStream(Paths.get(newFileNamePath)), "png");
-        } catch (IOException e) {
+        } catch (Exception e) {
             TestLogger.log("Could not take screenshot for the test browser '" + testname + "' due to: " + e);
         }
     }
