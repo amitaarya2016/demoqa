@@ -12,14 +12,14 @@ This repository contains Tests using TestNG and Webdriver API, with Allure as re
 3. Clone the repository by running -
 ```$ git clone https://github.com/amitaarya2016/demoqa```
    The project folder will be created with the source code in the directory where this command is run from.
-4. HomeBrew (On MAC) http://brew.sh/
-5. Chromedriver
+4. Install HomeBrew (On MAC) http://brew.sh/
+5. Download Chromedriver:
   1. Windows- https://sites.google.com/a/chromium.org/chromedriver/downloads
   The following line of code needs to be added to the base class :
   ```System.setProperty("webdriver.chrome.driver", "pathofchromedriver\\chromedriver.exe");```
   2. Mac - `$ brew tap caskroom/cask && brew cask install chromedriver`
-6. intelliJ IDE Community Edition (http://www.jetbrains.com/idea/download/)
-7. Maven -
+6. Download intelliJ IDE Community Edition (http://www.jetbrains.com/idea/download/)
+7. Install Maven -
   1. Windows- Install maven from https://maven.apache.org/download.cgi.
   2. Mac - open terminal and cd to the project directory created in step 3 and run the following commands-
    `$ brew install maven`  
@@ -42,9 +42,7 @@ This repository contains Tests using TestNG and Webdriver API, with Allure as re
 
 **Reporting**
 --------------
-1. 
- 
- To run reports after a test run, run the following command from the project base directory- 
+1. To run reports after a test run the following command from the project base directory- 
  ```allure serve```
  
  **Build a docker image and run**
